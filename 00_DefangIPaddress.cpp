@@ -8,9 +8,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution1
+{
+    // Create a new string - defanged 
+public:
+    string defangIPaddr(string address)
+    {
+        string res;
+        for (int i = 0; i < address.length(); i++)
+        {
+            if (address[i] == 46)
+            {
+                res.append("[.]");
+            }
+            else
+            {
+                res.push_back(address[i]);
+            }
+        }
+        return res;
+    }
+};
+
 class Solution
 {
-    // Replace the dot with [.] 
+    // Replace the dot with [.]
 public:
     string defangIPaddr(string address)
     {
