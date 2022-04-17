@@ -16,7 +16,40 @@ class Solution
 public:
     int balancedStringSplit(string s)
     {
-        // No brainer - Wrong solution "RLRRRLLRLL" 
+        // No brainer - Wrong solution "RLRRRLLRLL"
+        int count = 0;
+        int cL = 0, cR = 0;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s[i] == 'L')
+            {
+                cL++;
+                if (cR == cL)
+                {
+                    count++;
+                    cR = cL = 0;
+                }
+            }
+            else
+            {
+                cR++;
+                if (cR == cL)
+                {
+                    count++;
+                    cR = cL = 0;
+                }
+            }
+        }
+        return count ;
+    }
+};
+
+class Solution
+{
+public:
+    int balancedStringSplit(string s)
+    {
+        // No brainer - Wrong solution "RLRRRLLRLL"
         int count = 0;
         int cL = 0, cR = 0;
         for (int i = 0; i < s.length(); i++)
