@@ -5,6 +5,19 @@ using namespace std;
 
 class Solution
 {
+    // Discussion solution 
+public:
+    string firstPalindrome(vector<string> &words)
+    {
+        for (auto &w : words)
+            if (w == string(rbegin(w), rend(w)))
+                return w;
+        return "";
+    }
+};
+
+class Solution
+{
 public:
     string firstPalindrome(vector<string> &words)
     {
