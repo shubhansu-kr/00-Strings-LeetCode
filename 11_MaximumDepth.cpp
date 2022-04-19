@@ -31,6 +31,32 @@ class Solution
 public:
     int maxDepth(string s)
     {
+        int depth = 0;
+        int count = 0;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s[i] == '(')
+            {
+                count++;
+                if (depth < count)
+                {
+                    depth = count;
+                }
+            }
+            else if (s[i] == ')')
+            {
+                count--;
+            }
+        }
+        return depth;
+    }
+};
+
+class Solution
+{
+public:
+    int maxDepth(string s)
+    {
         // Given the string is a VPS
         // Parenthesis matching : Stack use case
         stack<char> p;
