@@ -3,9 +3,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution2
 {
-    // Discussion solution 
+    // Discussion solution
+public:
+    string firstPalindrome(vector<string> &words)
+    {
+        // Equal function is used to compare any range from i to j with another range starting from k 
+        // equal (i, j, k) ;
+        for (auto &w : words)
+            if (equal(begin(w), end(w), rbegin(w)))
+                return w;
+        return {};
+    }
+};
+
+class Solution1
+{
+    // Discussion solution
 public:
     string firstPalindrome(vector<string> &words)
     {
