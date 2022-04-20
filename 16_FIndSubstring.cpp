@@ -11,6 +11,17 @@ using namespace std;
 
 class Solution
 {
+    // Discussion solution
+public:
+    int numOfStrings(vector<string> &patterns, string word)
+    {
+        return count_if(begin(patterns), end(patterns), [&](const auto &p)
+                        { return word.find(p) != string::npos; });
+    }
+};
+
+class Solution
+{
 public:
     int numOfStrings(vector<string> &patterns, string word)
     {
