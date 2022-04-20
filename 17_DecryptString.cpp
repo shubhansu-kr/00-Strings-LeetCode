@@ -12,6 +12,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution1
+{
+public:
+    string freqAlphabets(string s)
+    {
+        string ans;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (i < s.length() - 2)
+            {
+                if (s[i + 2] == '#')
+                {
+                    ans.push_back(48 + (s[i] - 48) * 10 + s[i + 1]);
+                    i += 2;
+                }
+                else
+                {
+                    ans.push_back(s[i] + 48);
+                }
+            }
+            else
+            {
+                ans.push_back(s[i] + 48);
+            }
+        }
+        return ans;
+    }
+};
+
 class Solution
 {
 public:
