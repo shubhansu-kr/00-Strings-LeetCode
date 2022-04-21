@@ -8,6 +8,23 @@ class Solution
 public:
     string sortString(string s)
     {
+        sort(s.begin(), s.end());
+        string ans;
+        ans.push_back(s[0]);
+        s[0] = 0;
+        int sw = 1, i = 1;
+        while (ans.length() != s.length())
+        {
+            // Unsolved 
+        }
+    }
+};
+
+class Solution
+{
+public:
+    string sortString(string s)
+    {
         map<char, int> p;
         for (auto a : s)
         {
