@@ -17,7 +17,30 @@ public:
         int count = 0;
         for (int i = 0; i < words.size(); i++)
         {
-            if (equal(pref.begin(), pref.end(), words[i].begin())) {
+            ++count; 
+            for (int j = 0; j < pref.size(); j++)
+            {
+                if (pref[j] != words[i][j])
+                {
+                    count--;
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+};
+
+class Solution
+{
+public:
+    int prefixCount(vector<string> &words, string pref)
+    {
+        int count = 0;
+        for (int i = 0; i < words.size(); i++)
+        {
+            if (equal(pref.begin(), pref.end(), words[i].begin()))
+            {
                 count++;
             }
         }
