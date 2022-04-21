@@ -11,6 +11,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution1
+{
+public:
+    string destCity(vector<vector<string>> &paths)
+    {
+        set<string> p;
+        for (auto it : paths)
+        {
+            p.insert(it[0]);
+        }
+        for (auto it : paths)
+        {
+            if (!p.count(it[1]))
+            {
+                return it[1];
+            }
+        }
+        return "Happy Coding";
+    }
+};
+
 class Solution
 {
 public:
