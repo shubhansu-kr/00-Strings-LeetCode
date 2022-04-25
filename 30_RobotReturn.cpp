@@ -19,6 +19,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution1
+{
+public:
+    bool judgeCircle(string moves)
+    {
+        // Using a map can be a little toomuch
+        // SInce we know the index, its better to keep count
+        int Ucount = 0, Dcount = 0, Lcount = 0, Rcount = 0;
+        for (auto a : moves)
+        {
+            if (a == 'U')
+            {
+                ++Ucount;
+            }
+            else if (a == 'D')
+            {
+                ++Dcount;
+            }
+            else if (a == 'L')
+            {
+                ++Lcount;
+            }
+            else
+            {
+                ++Rcount;
+            }
+        }
+        return Ucount == Dcount && Lcount == Rcount;
+    }
+};
+
 class Solution
 {
 public:
