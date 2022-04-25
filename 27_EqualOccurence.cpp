@@ -11,6 +11,27 @@ using namespace std;
 
 class Solution
 {
+    // Discussion solution 
+public:
+    bool areOccurrencesEqual(string s)
+    {
+        // How to do it without map
+        // In one pass we cant be sure if that a particular char is going to
+        // come up later or not
+
+        // So we have to count all the char no matter what 
+        // then compare the frequency 
+
+        int cnt[26] = {}, m_cnt = 0;
+        for (auto ch : s)
+            m_cnt = max(m_cnt, ++cnt[ch - 'a']);
+        return all_of(begin(cnt), end(cnt), [&m_cnt](int t)
+                      { return t == 0 || t == m_cnt; });
+    }
+};
+
+class Solution
+{
 public:
     bool areOccurrencesEqual(string s)
     {
