@@ -9,6 +9,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution2
+{
+    // Using Stack
+public:
+    void reverseString(vector<char> &s)
+    {
+        stack<char> p;
+        for (auto a : s)
+        {
+            p.push(a);
+        }
+        for (int i = 0; i < s.size(); i++)
+        {
+            s[i] = p.top();
+            p.pop();
+        }
+    }
+};
+
 class Solution1
 {
     // Using Recursion
