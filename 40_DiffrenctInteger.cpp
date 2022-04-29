@@ -23,7 +23,7 @@ class Solution
 public:
     int numDifferentIntegers(string word)
     {
-        set<int> nums;
+        set<string> nums;
         int sw = 1;
         int start = 0, len = 0;
         for (int i = 0; i < word.length(); i++)
@@ -32,6 +32,9 @@ public:
             {
                 if (sw)
                 {
+                    if (word[i] == '0') {
+                        continue;
+                    }
                     start = i;
                 }
                 ++len;
@@ -41,7 +44,7 @@ public:
             {
                 if (!sw)
                 {
-                    nums.insert(stoi(word.substr(start, len)));
+                    nums.insert(word.substr(start, len));
                     len = 0;
                 }
                 sw = 1;
@@ -49,7 +52,7 @@ public:
         }
         if (len)
         {
-            nums.insert(stoi(word.substr(start, len)));
+            nums.insert(word.substr(start, len));
         }
         return nums.size();
     }
