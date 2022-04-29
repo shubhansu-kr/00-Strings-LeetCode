@@ -19,7 +19,28 @@ using namespace std;
 
 class Solution
 {
-    // Wrong solution : out of range Run time error 
+    // Discussion solution 
+public:
+    int numDifferentIntegers(string word)
+    {
+        unordered_set<string> s{""};
+        for (int i = 0, j = 0; j <= word.size(); ++j)
+        {
+            if (j < word.size() && isdigit(word[j]))
+                i += i < j && word[i] == '0';
+            else
+            {
+                s.insert(word.substr(i, j - i));
+                i = j + 1;
+            }
+        }
+        return s.size() - 1;
+    }
+};
+
+class Solution
+{
+    // Wrong solution : out of range Run time error
 public:
     int numDifferentIntegers(string word)
     {
@@ -32,7 +53,8 @@ public:
             {
                 if (sw)
                 {
-                    if (word[i] == '0') {
+                    if (word[i] == '0')
+                    {
                         continue;
                     }
                     start = i;
