@@ -3,15 +3,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+bool isLongPressedName(string name, string typed)
+{
+    int i = 0, m = name.length(), n = typed.length();
+    for (int j = 0; j < n; ++j)
+        if (i < m && name[i] == typed[j])
+            ++i;
+        else if (!j || typed[j] != typed[j - 1])
+            return false;
+    return i == m;
+}
 class Solution
 {
+    // Wrong solution
 public:
     bool isLongPressedName(string name, string typed)
     {
-        if (name.length() > typed.length() || name[0] != typed[0]) {
-            return false ;
+        if (name.length() > typed.length() || name[0] != typed[0])
+        {
+            return false;
         }
-        
+
         int i = 0, j = 0;
         while (i < name.length())
         {
@@ -19,22 +31,27 @@ public:
             {
                 ++j;
                 ++i;
-                continue ;
+                continue;
             }
-            while (typed[j] == name[i-1] && j < typed.length()) {
-                ++j ;
+            while (typed[j] == name[i - 1] && j < typed.length())
+            {
+                ++j;
             }
-            if (typed[j] != name[i]) {
-                return false ;
-            }
-        }
-        if (j < typed.length()) {
-            while (j < typed.length()){
-                if (typed [j] != typed[i -1]) return false ;
-                ++j ;
+            if (typed[j] != name[i])
+            {
+                return false;
             }
         }
-        return true ;
+        if (j < typed.length())
+        {
+            while (j < typed.length())
+            {
+                if (typed[j] != typed[i - 1])
+                    return false;
+                ++j;
+            }
+        }
+        return true;
     }
 };
 
