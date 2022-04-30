@@ -23,7 +23,7 @@
 
 # 00_String
 
-1. There are 35 Files in this repo. Each file is dedicated to one problem.
+1. There are 40 Files in this repo. Each file is dedicated to one problem.
 2. File name is the short form of Problem Title.
 3. Each file contains :
     1. Link to the problem
@@ -40,4 +40,4 @@ This repo has solution to the Easy level question for String topic from leetcode
 
 My leetcode profile : [shubhansu-kr](https://leetcode.com/shubhansu-kr/)
 
-> Duration : 11 April 2022 to
+> Duration : 11 April 2022 to 30 April 2022
